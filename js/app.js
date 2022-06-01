@@ -9,7 +9,7 @@ let board, turn, winner
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = [null, null, null, null, null, null, null, null, null,]
 const messageEl = "This message will display the game's status"
-console.log(messageEl)
+
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -17,4 +17,10 @@ console.log(messageEl)
 
 
 /*-------------------------------- Functions --------------------------------*/
+init()
 
+function init(){
+  // console.log("this init function is invoked")
+  let board = squareEls
+  console.log(board)
+}
