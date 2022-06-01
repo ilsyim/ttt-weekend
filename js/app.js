@@ -7,11 +7,10 @@ let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = document.querySelector(".board")
+const squareEls = document.querySelectorAll(".box")
 const messageEl = document.querySelector("#message")
 
-
-
+console.log(squareEls)
 /*----------------------------- Event Listeners -----------------------------*/
 
 
@@ -23,14 +22,15 @@ function init(){
   // console.log("this init function is invoked")
   board = [null, null, null, null, null, null, null, null, null,]
   // console.log(board)
-  messageEl.textContent = ""
+  messageEl.textContent = "Player 1, click a square to begin!"
   turn = 1
   winner = null
   render()
 }
-console.log(init)
 function render(){
-  // board.array.forEach(element => {
-    
-  // });
+  let currentBoard = board.forEach(function(square){
+    document.querySelector(".box")
+    return 1
+    console.log(currentBoard)
+  })
 }
