@@ -39,7 +39,23 @@ function render(){
   })
   console.log(currentBoard)
   winner = null
-  if (winner) {
-    rendernWin()
+  if (winner === null) {
+    renderPlayerTurn()
+  } else if (winner = 'T') {
+    renderTie()
+  } else {
+    renderWin()
   }
 }
+
+function renderPlayerTurn(){
+  if (turn === 1) {
+    messageEl.textContent = `Player 1, it's your turn!`
+  } else if (turn === -1) {
+    messageEl.textContent = `Player 2, it's your turn!`
+  }
+}
+
+// function renderWin(){
+//   messageEl.textContent = `Congratulations! ? ${Player1} : ${Player2} You won!`
+// }
