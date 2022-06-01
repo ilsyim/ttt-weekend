@@ -10,7 +10,7 @@ let board, turn, winner
 const squareEls = document.querySelectorAll(".box")
 const messageEl = document.querySelector("#message")
 
-console.log(squareEls)
+// console.log(squareEls)
 /*----------------------------- Event Listeners -----------------------------*/
 
 
@@ -28,9 +28,9 @@ function init(){
   render()
 }
 function render(){
-  let currentBoard = board.forEach(function(square){
-    document.querySelector(".box")
-    return 1
-    console.log(currentBoard)
+  let currentBoard = squareEls.forEach(function(squareEl){
+    // do this for each element in squareEls
+    
+    console.log(squareEl)
   })
 }
