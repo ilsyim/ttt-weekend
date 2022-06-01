@@ -28,9 +28,18 @@ function init(){
   render()
 }
 function render(){
-  let currentBoard = squareEls.forEach(function(squareEl){
+  let currentBoard
+  squareEls.forEach(function(squareEl, index){
     // do this for each element in squareEls
-    
+    // if the element = 1, display X ; if the element = -1, display O ; if none of the sqaures have been clicked, display null.
+    // document.getElementById("sq0").textContent = "X" <----- this line will put 'X' in the box with id=sq0
+    squareEl = null
     console.log(squareEl)
+    console.log(index)
   })
+  console.log(currentBoard)
+  winner = null
+  if (winner) {
+    rendernWin()
+  }
 }
