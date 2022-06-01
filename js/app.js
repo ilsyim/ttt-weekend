@@ -1,6 +1,15 @@
 /*-------------------------------- Constants --------------------------------*/
 let board, turn, winner
-
+let winningCombos = [
+{1, null, null, null, 1, null, null, null, 1}
+{null, null, 1, null, 1, null, 1 null, null}
+{1, null, null, 1, null, null, 1, null, null}
+{null, 1, null, null, 1, null, null, 1, null}
+{null, null, 1, null, null, 1, null, null, 1}
+{1, 1, 1, null, null, null, null, null, null}
+{null, null, null, 1, 1, 1, null, null, null}
+{null, null, null, null, null, null, 1, 1, 1}
+]
 
 /*---------------------------- Variables (state) ----------------------------*/
 
@@ -20,9 +29,9 @@ init()
 
 function init(){
   // console.log("this init function is invoked")
-  board = [null, null, null, null, null, null, null, null, null,]
+  board = [null, null, null, null, null, null, null, null, null]
   // console.log(board)
-  messageEl.textContent = "Player 1, click a square to begin!"
+  messageEl.textContent = ""
   turn = 1
   winner = null
   render()
@@ -42,11 +51,14 @@ function render(){
   if (winner === null) {
     renderPlayerTurn()
   } else if (winner = 'T') {
-    renderTie()
+    `You tied!`
   } else {
     renderWin()
   }
 }
+
+
+
 
 function renderPlayerTurn(){
   if (turn === 1) {
