@@ -8,8 +8,8 @@ let board, turn, winner
 
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = [null, null, null, null, null, null, null, null, null,]
-console.log(squareEls)
-// const messageEl = 
+const messageEl = "This message will display the game's status"
+console.log(messageEl)
 
 
 /*----------------------------- Event Listeners -----------------------------*/
