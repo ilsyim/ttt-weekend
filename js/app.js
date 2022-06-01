@@ -7,8 +7,8 @@ let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = [null, null, null, null, null, null, null, null, null,]
-const messageEl = "This message will display the game's status"
+const squareEls = document.querySelector(".board")
+const messageEl = document.querySelector("#message")
 
 
 
@@ -21,6 +21,16 @@ init()
 
 function init(){
   // console.log("this init function is invoked")
-  let board = squareEls
-  console.log(board)
+  board = [null, null, null, null, null, null, null, null, null,]
+  // console.log(board)
+  messageEl.textContent = ""
+  turn = 1
+  winner = null
+  render()
+}
+console.log(init)
+function render(){
+  // board.array.forEach(element => {
+    
+  // });
 }
