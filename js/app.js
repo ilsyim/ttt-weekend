@@ -1,14 +1,14 @@
 /*-------------------------------- Constants --------------------------------*/
-let sqIdx
+let sqIndx
 let winningCombos = [
-[1, null, null, null, 1, null, null, null, 1],
-[null, null, 1, null, 1, null, 1, null, null],
-[1, null, null, 1, null, null, 1, null, null],
-[null, 1, null, null, 1, null, null, 1, null],
-[null, null, 1, null, null, 1, null, null, 1],
-[1, 1, 1, null, null, null, null, null, null],
-[null, null, null, 1, 1, 1, null, null, null],
-[null, null, null, null, null, null, 1, 1, 1]
+[0, 1, 2],
+[3, 4, 5],
+[6, 7, 8],
+[0, 3, 6],
+[1, 4, 7],
+[2, 5, 8],
+[0, 4, 8],
+[2, 4, 6]
 ]
 
 // console.log(winningCombos[idx#])
@@ -55,7 +55,7 @@ function render(){
       squareEls[index].textContent = null
     }
   })
-  console.log(currentBoard)
+  // console.log(currentBoard)
   if (winner === null) {
     renderPlayerTurn()
   } else if (winner = 'T') {
@@ -68,10 +68,11 @@ function render(){
 // squareEls.addEventListener('click', function(evt){
 //   let sqIdx 
 // })
-
-document.querySelector('section').addEventListener('click', handleClick)
+// goal of step 6c is to get the index of the square when it's clicked - index of the square is an id with a number contained in a string (parseInt), don't need 'sq' so use .replace('searchFor', 'replaceWith') 
+document.querySelector('.board').addEventListener('click', handleClick)
 function handleClick(evt){
-console.log(evt)
+  const sqIdx = parseInt(evt.target.id.replace('sq', ''))
+console.log(sqIdx)
 // doc.qs('section') = if I click on each box it returns an event when console.log(evt)
 }
 // if the user clicks a box,  -> (board.value === 1) {
