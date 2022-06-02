@@ -1,5 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
-let sqIndx
+let sqIdx
 let winningCombos = [
 [0, 1, 2],
 [3, 4, 5],
@@ -39,19 +39,23 @@ function init(){
 }
 
 // render is showing the current state of the board without user input. board.forEach is going to show each squareEl as null because that's what the board[] is set to.
+
 function render(){
   let currentBoard
+  
   // do this for each element in squareEls
   // if the element = 1, display X ; if the element = -1, display O ; if none of the sqaures have been clicked, display null.
   // document.getElementById("sq0").textContent = "X" <----- this line will put 'X' in the box with id=sq0
+
   board.forEach(function(squareEl, index){
     // console.log(squareEl)
     // console.log(index)
-    if (board[index] === 1){
+    if (squareEl === 1){
       squareEls[index].textContent = 'X'
-    } else if (board[index] === -1){
+    } else if (squareEl === -1){
       squareEls[index].textContent = 'O'
-    } else if (board[index] === null){
+    } 
+    else if (squareEl === null){
       squareEls[index].textContent = null
     }
   })
@@ -65,6 +69,7 @@ function render(){
   }
 }
 
+
 // squareEls.addEventListener('click', function(evt){
 //   let sqIdx 
 // })
@@ -72,14 +77,36 @@ function render(){
 document.querySelector('.board').addEventListener('click', handleClick)
 function handleClick(evt){
   const sqIdx = parseInt(evt.target.id.replace('sq', ''))
-console.log(sqIdx)
+  if (board[sqIdx] !== null) return
+  if (winner !== null) return
+  board[sqIdx] = turn
+  turn *= -1
+  winner = getWinner()
+  render()
+  // console.log()
 // doc.qs('section') = if I click on each box it returns an event when console.log(evt)
 }
-// if the user clicks a box,  -> (board.value === 1) {
-    //   document.getElementById().textContent = "X"
-    // } else (board.value === -1) {
-    //   document.getElementById().textContent = "O"
-    // }
+
+// 
+function getWinner(){
+  for (let index = 0; index < winningCombos.length; index++) {
+    if (
+      board[winningCombos[index][0]] + 
+      board[winningCombos[index][1]] + 
+      board[winningCombos[index][2]] === 3) {
+      return 1
+    } else if (
+      board[winningCombos[index][0]] + 
+      board[winningCombos[index][1]] + 
+      board[winningCombos[index][2]] === - 3) {
+      return -1
+    } else if (board.includes(null) === false) {
+      return 'T'
+      winner = 'T'
+    }
+  }
+  return null
+}
 
 
 
