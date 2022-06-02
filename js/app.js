@@ -21,11 +21,13 @@ let board, turn, winner
 const squareEls = document.querySelectorAll(".box")
 // message displayed (whose turn, who won, etc.)
 const messageEl = document.querySelector("#message")
+// reset button appears when a click happens
+const resetBtnEl = document.querySelector("#reset-button")
 
 // console.log(squareEls)
 /*----------------------------- Event Listeners -----------------------------*/
-
-
+document.querySelector('.board').addEventListener('click', handleClick)
+document.querySelector('#reset-button').addEventListener('click', init)
 
 /*-------------------------------- Functions --------------------------------*/
 init()
@@ -37,6 +39,7 @@ function init(){
   messageEl.textContent = ""
   turn = 1
   winner = null
+  resetBtnEl.setAttribute('hidden', true)
   render()
 }
 
@@ -44,7 +47,9 @@ function init(){
 
 function render(){
   let currentBoard
-  
+  if (turn === -1) {
+    resetBtnEl.removeAttribute('hidden')
+  }
   // do this for each element in squareEls
   // if the element = 1, display X ; if the element = -1, display O ; if none of the sqaures have been clicked, display null.
   // document.getElementById("sq0").textContent = "X" <----- this line will put 'X' in the box with id=sq0
@@ -69,6 +74,7 @@ function render(){
   } else {
     renderWin()
   }
+  
   }
   
   
