@@ -36,7 +36,7 @@ function init(){
   // console.log("this init function is invoked")
   board = [null, null, null, null, null, null, null, null, null]
   // console.log(board)
-  messageEl.textContent = ""
+  messageEl.textContent = "Player 1, click on a box to start!"
   turn = 1
   winner = null
   resetBtnEl.setAttribute('hidden', true)
