@@ -36,7 +36,7 @@ function init(){
   // console.log("this init function is invoked")
   board = [null, null, null, null, null, null, null, null, null]
   // console.log(board)
-  messageEl.textContent = "Player 1, click on a box to start!"
+  messageEl.textContent = ""
   turn = 1
   winner = null
   resetBtnEl.setAttribute('hidden', true)
@@ -111,7 +111,6 @@ function getWinner(){
       return -1
     } else if (board.includes(null) === false) {
       return 'T'
-      winner === 'T'
     }
   }
   return null
