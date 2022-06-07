@@ -1,10 +1,4 @@
 /*-------------------------------- Constants --------------------------------*/
-const projects = [
-  {
-    name: "Tic-Tac-Toe",
-    description: "My first major project at GA, a tic-tac-toe game."
-  }
-]
 let sqIdx
 let winningCombos = [
 [0, 1, 2],
@@ -105,7 +99,7 @@ function render(){
 // 
 function getWinner(){
   // set winner = the board's value['']
-  winner = board['']
+  // winner = board['']
   for (let index = 0; index < winningCombos.length; index++) {
     let sum =
       board[winningCombos[index][0]] + 
@@ -139,9 +133,6 @@ function renderWin(){
   } else if (winner === -1) {
     messageEl.textContent = `Congratulations! Player 2 won!`
   }
-}
-export {
-  projects
 }
 
 // if winner !== null, the game should end!!!
